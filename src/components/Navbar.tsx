@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/icon/transparent.png';
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import { useState, useEffect } from 'react';
@@ -30,7 +31,7 @@ const Navbar = () => {
           {/* Added Logo/Icon */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="https://github.com/moo-farah/mohamedfarah-site/blob/main/src/assets/icon/transparent.png" 
+              src={logo}
               alt="mohamed farah" 
               className="w-8 h-8"
             />
