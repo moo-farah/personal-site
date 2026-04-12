@@ -30,7 +30,7 @@ const Navbar = () => {
           {/* Added Logo/Icon */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="https://raw.githubusercontent.com/phillip-che/phillipche-site/refs/heads/main/src/assets/icon/transparent.png" 
+              src="https://raw.githubusercontent.com/moo-farah/mohamedfarah-site/main/src/assets/icon/transparent.png" 
               alt="mohamed farah" 
               className="w-8 h-8"
             />
