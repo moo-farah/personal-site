@@ -15,30 +15,30 @@ const projects = [
     link: "https://github.com/moo-farah/wildfire-tracker-website",
     previewImage: "https://personal-site-phi-snowy.vercel.app/assets/cypherchat-7f589c33.png"
   },
-  // {
-  //   title: "Sole Exchange",
-  //   description: "Forum that allows users to post, interact, and search about anything sneaker related..",
-  //   tech: [
-  //     { name: "React", color: "cyan" },
-  //     { name: "JavaScript", color: "yellow" },
-  //     { name: "Node.js", color: "green" },
-  //     { name: "Supabase", color: "emerald" }
-  //   ],
-  //   link: "https://github.com/moo-farah/wildfire-tracker-website",
-  //   previewImage: "https://personal-site-phi-snowy.vercel.app/assets/soleexchange1-40b3b5a8.png"
-  // },
-  // {
-  //   title: "Spotify Data Dashboard",
-  //   description: "Dashboard that fetches Spotify's Top 50 songs and visualizes data in text and chart form.",
-  //   tech: [
-  //     { name: "React", color: "cyan" },
-  //     { name: "Spotify API", color: "emerald" },
-  //     { name: "JavaScript", color: "yellow" },
-  //     { name: "Node.js", color: "green" },
-  //   ],
-  //   link: "https://github.com/moo-farah/wildfire-tracker-website",
-  //   previewImage: "https://personal-site-phi-snowy.vercel.app/assets/spotifydash-7d7e663f.png"
-  // }
+  {
+    title: "Sole Exchange",
+    description: "Forum that allows users to post, interact, and search about anything sneaker related..",
+    tech: [
+      { name: "React", color: "cyan" },
+      { name: "JavaScript", color: "yellow" },
+      { name: "Node.js", color: "green" },
+      { name: "Supabase", color: "emerald" }
+    ],
+    link: "https://github.com/moo-farah/wildfire-tracker-website",
+    previewImage: "https://personal-site-phi-snowy.vercel.app/assets/soleexchange1-40b3b5a8.png"
+  },
+  {
+    title: "Spotify Data Dashboard",
+    description: "Dashboard that fetches Spotify's Top 50 songs and visualizes data in text and chart form.",
+    tech: [
+      { name: "React", color: "cyan" },
+      { name: "Spotify API", color: "emerald" },
+      { name: "JavaScript", color: "yellow" },
+      { name: "Node.js", color: "green" },
+    ],
+    link: "https://github.com/moo-farah/wildfire-tracker-website",
+    previewImage: "https://personal-site-phi-snowy.vercel.app/assets/spotifydash-7d7e663f.png"
+  }
 ];
 
 export const sections = [
@@ -48,15 +48,8 @@ export const sections = [
         <div className="space-y-4 mb-8">
           {[
             {
-              company: "Amazon",
-              date: "2024 - Now",
-              title: "Software Development Engineer",
-              description: ["working on large scale messaging systems"],
-              dotColor: "bg-blue-500"
-            },
-            {
               company: "Middlesex University",
-              date: "2024 - 2025",
+              date: "2024 - Now",
               title: "BSc Information Technology",
               description: ["graduated with a passion for tech and innovation"],
               dotColor: "bg-amber-500"
@@ -106,7 +99,7 @@ export const sections = [
       )
     },
     {
-      title: "Fun Facts",
+      title: "Hobbies",
       content: <HobbiesSection />
     }
   ]

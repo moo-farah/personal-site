@@ -2,29 +2,29 @@ import { motion } from 'framer-motion';
 import { useYouTubeVideoCount } from '../hooks/useYouTubeVideoCount';
 
 const hobbies = [
-  {
-    title: "YouTube Bingeing",
-    description: "Learning from YC founders, coding, and occasionally falling into cat video rabbit holes.",
+    {
+    title: "YouTube",
+    description: "documenting my life as a software engineer",
     statsKey: "youtube" as const,
     color: "rose"
   },
   {
-    title: "Startup Dreaming",
-    description: "Pitching wild ideas to friends, building MVPs, and collecting rejection emails like Pokémon.",
-    stats: "∞ pivots",
+    title: "Real Estate Investing",
+    description: "playing monopoly but with real money",
+    stats: "0 properties",
     color: "blue"
   },
   {
-    title: "Coffee Alchemy",
-    description: "Brewing the perfect cup, one caffeine-fueled bug fix at a time.",
-    stats: "2 cups/day (minimum)",
-    color: "amber"
+    title: "Stocks and Crypto",
+    description: "buying high and selling low is my philosophy",
+    stats: "-$25,000 profit",
+    color: "green"
   },
   {
-    title: "Urban Exploring",
-    description: "Wandering city streets, finding hidden coffee shops, and people-watching for startup inspiration.",
-    stats: "Lost: 4 times this month",
-    color: "blue"
+    title: "Mechanical Keyboards",
+    description: "fun but will be the reason why im homeless",
+    stats: "3 custom keyboards",
+    color: "purple"
   },
 ];
 

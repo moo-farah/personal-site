@@ -75,22 +75,15 @@ const Contact = () => {
     }
   };
 
-
   const eventTypes = [
     {
-      id: "phillip-che/15-minutes-chat-with-me",
+      id: "moo-farah/coffee-chat",
       title: "15 Min Chat",
       description: "Quick chat",
       duration: "15 min"
     },
     {
-      id: "phillip-che/30-minutes-chat-with-me", 
-      title: "30 Min Chat",
-      description: "Standard meeting",
-      duration: "30 min"
-    },
-    {
-      id: "phillip-che/60-minutes-chat-with-me",
+      id: "moo-farah/partnership-founder-chat",
       title: "60 Min Chat", 
       description: "In-depth conversation",
       duration: "60 min"
@@ -101,8 +94,13 @@ const Contact = () => {
     (async function () {
       const cal = await getCalApi();
       cal("ui", {
-        "styles": {
-          "branding": { "brandColor": "#000000" }
+        cssVarsPerTheme: {
+          light: {
+            "--cal-brand": "#000000"
+          },
+          dark: {
+            "--cal-brand": "#000000"
+          }
         }
       });
     })();
@@ -127,7 +125,7 @@ const Contact = () => {
           
           <div className="grid grid-cols-2 gap-3">
             <motion.a
-              href="mailto:phillipche1@gmail.com"
+              href="mailto:rizmik.farah@gmail.com"
               className="flex items-center space-x-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-all group"
               variants={cardHoverVariants}
               initial="initial"
@@ -145,12 +143,12 @@ const Contact = () => {
               </motion.div>
               <div className="min-w-0 flex-1">
                 <p className="text-sm font-medium text-gray-900 dark:text-white">Email</p>
-                <p className="text-xs text-gray-500 dark:text-gray-400 truncate">phillipche1@gmail.com</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 truncate">rizmik.farah@gmail.com</p>
               </div>
             </motion.a>
 
             <motion.a
-              href="https://www.instagram.com/philllip.che/"
+              href="https://www.instagram.com/menslaw___/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-all group"
@@ -169,12 +167,12 @@ const Contact = () => {
               </motion.div>
               <div className="min-w-0 flex-1">
                 <p className="text-sm font-medium text-gray-900 dark:text-white">Instagram</p>
-                <p className="text-xs text-gray-500 dark:text-gray-400 truncate">@philllip.che</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 truncate">@menslaw___/</p>
               </div>
             </motion.a>
 
             <motion.a
-              href="https://linkedin.com/in/moofarah"
+              href="https://linkedin.com/in/mohamedfarah0"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-all group"
@@ -193,10 +191,9 @@ const Contact = () => {
               </motion.div>
               <div className="min-w-0 flex-1">
                 <p className="text-sm font-medium text-gray-900 dark:text-white">LinkedIn</p>
-                <p className="text-xs text-gray-500 dark:text-gray-400 truncate">in/moofarah</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 truncate">in/mohamedfarah0</p>
               </div>
             </motion.a>
-
           </div>
         </div>
       </FadeInSection>

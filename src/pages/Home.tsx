@@ -35,7 +35,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.2 }}
           >
-            your average boba enjoyer from socal trying to document the struggles of becoming a software engineer.
+            Boba lover from Nairobi, building my software journey one bug and breakthrough at a time. Inspired by Y Combinator’s YouTube join the adventure!
           </motion.p>
         </section>
       </FadeInSection>
