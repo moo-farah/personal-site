@@ -20,12 +20,6 @@ const hobbies = [
     stats: "-$25,000 profit",
     color: "green"
   },
-  {
-    title: "Mechanical Keyboards",
-    description: "fun but will be the reason why im homeless",
-    stats: "3 custom keyboards",
-    color: "purple"
-  },
 ];
 
 export const HobbiesSection = () => {

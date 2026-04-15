@@ -5,27 +5,15 @@ import { HobbiesSection } from '../components/HobbiesSection';
 const projects = [
   {
     title: "Wildfire Tracker",
-    description: "Real-time wildfire tracker using Google Maps and NASA APIs for live data, interactive maps, and safety updates.",
+    description: "Real-time wildfire tracker using Google Maps and NASA APIs for live data.",
     tech: [
       { name: "JavaScript", color: "blue" },
       { name: "React", color: "cyan" },
-      { name: "CSS", color: "neutral" },
-      { name: "HTML", color: "amber" }
+      { name: "Google API", color: "neutral" },
+      { name: "NASA API", color: "amber" }
     ],
     link: "https://github.com/moo-farah/wildfire-tracker-website",
     previewImage: "https://personal-site-phi-snowy.vercel.app/assets/cypherchat-7f589c33.png"
-  },
-  {
-    title: "Sole Exchange",
-    description: "Forum that allows users to post, interact, and search about anything sneaker related..",
-    tech: [
-      { name: "React", color: "cyan" },
-      { name: "JavaScript", color: "yellow" },
-      { name: "Node.js", color: "green" },
-      { name: "Supabase", color: "emerald" }
-    ],
-    link: "https://github.com/moo-farah/wildfire-tracker-website",
-    previewImage: "https://personal-site-phi-snowy.vercel.app/assets/soleexchange1-40b3b5a8.png"
   },
   {
     title: "Spotify Data Dashboard",
@@ -51,17 +39,17 @@ export const sections = [
               company: "Middlesex University",
               date: "2024 - Now",
               title: "BSc Information Technology",
-              description: ["graduated with a passion for tech and innovation"],
+              description: ["Graduating in July 2026 with a passion for tech and innovation"],
               dotColor: "bg-amber-500"
             },
           
             {
               company: "RelatiPay",
-              date: "2026",
-              title: "Founder",
+              date: "2026 - Now",
+              title: "Co-Founder",
               description: ["Founded a financial startup app enabling users to send money to relatives instantly with one click."],
               dotColor: "bg-green-500"
-            }
+            },
           ].map((item) => (
             <div key={item.company + item.date} className="relative">
               <div 
