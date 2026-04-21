@@ -7,16 +7,49 @@ const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 export const useSpotifyAuth = () => {
   const [token, setToken] = useState<string | null>(null);
+  const [authError, setAuthError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!token) {
-      getAccessToken().then((data) => {
-        setToken(data.access_token);
-      })
-      .catch((error) => {
-        console.error('Error fetching Spotify access token:', error);
-      });
+    if (!CLIENT_ID || !CLIENT_SECRET || !REFRESH_TOKEN) {
+      setAuthError('Missing Spotify environment variables.');
+      return;
     }
+
+    let timeoutId: number | undefined;
+    let cancelled = false;
+
+    const refreshAccessToken = async () => {
+      try {
+        const data = await getAccessToken();
+
+        if (cancelled) return;
+
+        if (data?.error || !data?.access_token) {
+          const errorMessage = data?.error_description || data?.error || 'Unable to fetch Spotify access token.';
+          setAuthError(errorMessage);
+          return;
+        }
+
+        setToken(data.access_token);
+        setAuthError(null);
+
+        const expiresInSeconds = Number(data.expires_in || 3600);
+        const refreshInMs = Math.max((expiresInSeconds - 60) * 1000, 60_000);
+        timeoutId = window.setTimeout(refreshAccessToken, refreshInMs);
+      } catch (error) {
+        if (!cancelled) {
+          console.error('Error fetching Spotify access token:', error);
+          setAuthError('Failed to refresh Spotify token.');
+        }
+      }
+    };
+
+    refreshAccessToken();
+
+    return () => {
+      cancelled = true;
+      if (timeoutId) window.clearTimeout(timeoutId);
+    };
   }, []);
 
   const getAccessToken = async () => {
@@ -36,5 +69,5 @@ export const useSpotifyAuth = () => {
     return response.json();
 }
   
-  return { token };
+  return { token, authError };
 };

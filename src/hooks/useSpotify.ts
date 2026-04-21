@@ -22,7 +22,8 @@ export function useSpotify() {
   const [currentTrack, setCurrentTrack] = useState<Track | null>(null);
   const [recentTracks, setRecentTracks] = useState<Track[]>([]);
   const [topTracks, setTopTracks] = useState<Track[]>([]);
-  const { token } = useSpotifyAuth();
+  const [spotifyError, setSpotifyError] = useState<string | null>(null);
+  const { token, authError } = useSpotifyAuth();
 
   useEffect(() => {
     if (!token) return;
@@ -47,7 +48,7 @@ export function useSpotify() {
             name: track.name,
             artist: track.artists.map((artist: { name: string }) => artist.name).join(', '),
             album: track.album.name,
-            albumImageUrl: track.album.images[0].url,
+            albumImageUrl: track.album.images?.[0]?.url ?? '',
             spotifyUrl: track.external_urls.spotify,
           });
         }
@@ -61,10 +62,12 @@ export function useSpotify() {
     fetchCurrentTrack();
 
     // Poll for updates
-    // const interval = setInterval(fetchCurrentTrack, 1000);
+    const interval = setInterval(fetchCurrentTrack, 1000);
 
     // return () => {
-    //   clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
     // };
   }, [token]);
 
@@ -86,21 +89,23 @@ export function useSpotify() {
             name: item.track.name,
             artist: item.track.artists.map((artist: { name: string }) => artist.name).join(', '),
             album: item.track.album.name,
-            albumImageUrl: item.track.album.images[0].url,
+            albumImageUrl: item.track.album.images?.[0]?.url ?? '',
             spotifyUrl: item.track.external_urls.spotify,
           }));
           setRecentTracks(tracks);
+          setSpotifyError(null);
         }
       } catch (error) {
         console.error('Error fetching recent tracks:', error);
+        setSpotifyError('Unable to load recently played songs. Check Spotify token scopes.');
       }
     };
 
     fetchRecentTracks();
     // Fetch recent tracks every minute
-    // const interval = setInterval(fetchRecentTracks, 60000);
+    const interval = setInterval(fetchRecentTracks, 60000);
 
-    // return () => clearInterval(interval);
+    return () => clearInterval(interval);
   }, [token]);
 
   useEffect(() => {
@@ -123,26 +128,29 @@ export function useSpotify() {
             name: item.name,
             artist: item.artists.map((artist: { name: string }) => artist.name).join(', '),
             album: item.album.name,
-            albumImageUrl: item.album.images[0].url,
+            albumImageUrl: item.album.images?.[0]?.url ?? '',
             spotifyUrl: item.external_urls.spotify,
           }));
           setTopTracks(tracks);
+          setSpotifyError(null);
         }
       } catch (error) {
         console.error('Error fetching top tracks:', error);
+        setSpotifyError('Unable to load top tracks. Check Spotify token scopes.');
       }
     };
 
     fetchTopTracks();
     // Fetch top tracks every hour
-    // const interval = setInterval(fetchTopTracks, 3600000);
+    const interval = setInterval(fetchTopTracks, 3600000);
 
-    // return () => clearInterval(interval);
+    return () => clearInterval(interval);
   }, [token]);
 
   return {
     currentTrack,
     recentTracks,
     topTracks,
+    spotifyError: authError || spotifyError,
   };
 } 

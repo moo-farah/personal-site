@@ -8,7 +8,7 @@ import { useTheme } from '../context/ThemeContext';
 type TrackListType = 'recent' | 'top';
 
 const SpotifyPlaying = () => {
-  const { currentTrack, recentTracks, topTracks } = useSpotify();
+  const { currentTrack, recentTracks, topTracks, spotifyError } = useSpotify();
   const [activeList, setActiveList] = useState<TrackListType>('recent');
   const [displayTrack, setDisplayTrack] = useState<any>(null);
   const [tracksList, setTracksList] = useState<any[]>([]);
@@ -105,6 +105,12 @@ const SpotifyPlaying = () => {
       </div>
       
       <div className="flex flex-col md:flex-row md:gap-4">
+        {spotifyError && (
+          <div className="w-full mb-4 rounded-lg border border-amber-300/70 dark:border-amber-800 bg-amber-50/80 dark:bg-amber-950/40 px-3 py-2 text-sm text-amber-900 dark:text-amber-200">
+            {spotifyError}
+          </div>
+        )}
+
         {/* Main Track Display */}
         <div className="w-full md:w-1/2 mb-4 md:mb-0">
           {/* Mobile Title */}
