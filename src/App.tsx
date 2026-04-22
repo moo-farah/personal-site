@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ThemeProvider } from './context/ThemeContext';
 import { useState, useEffect } from 'react';
@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import Stack from './pages/Stack';
+import InterfaceLab from './pages/InterfaceLab';
 import Contact from './pages/Contact';
 // import Gallery from './pages/Gallery';
 import ScrollToTop from './utils/ScrollToTop';
@@ -70,7 +70,8 @@ const App = () => {
                   <Routes location={location}>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
-                    <Route path="/stack" element={<Stack />} />
+                    <Route path="/interface-lab" element={<InterfaceLab />} />
+                    <Route path="/stack" element={<Navigate to="/interface-lab" replace />} />
                     <Route path="/contact" element={<Contact />} />
                     {/* <Route path="/gallery" element={<Gallery />} /> */}
                   </Routes>
