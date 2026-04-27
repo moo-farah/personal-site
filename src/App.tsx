@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import InterfaceLab from './pages/InterfaceLab';
+import Gear from './pages/Gear';
 import Contact from './pages/Contact';
 // import Gallery from './pages/Gallery';
 import ScrollToTop from './utils/ScrollToTop';
@@ -70,8 +70,10 @@ const App = () => {
                   <Routes location={location}>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
-                    <Route path="/interface-lab" element={<InterfaceLab />} />
-                    <Route path="/stack" element={<Navigate to="/interface-lab" replace />} />
+                    <Route path="/gear" element={<Gear />} />
+                    <Route path="/work" element={<Navigate to="/gear" replace />} />
+                    <Route path="/interface-lab" element={<Navigate to="/gear" replace />} />
+                    <Route path="/stack" element={<Navigate to="/gear" replace />} />
                     <Route path="/contact" element={<Contact />} />
                     {/* <Route path="/gallery" element={<Gallery />} /> */}
                   </Routes>

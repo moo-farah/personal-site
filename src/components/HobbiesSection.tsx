@@ -17,7 +17,7 @@ const hobbies = [
   {
     title: "Stocks and Crypto",
     description: "buying high and selling low is my philosophy",
-    stats: "-$25,000 profit",
+    stats: "0 profit",
     color: "green"
   },
 ];
