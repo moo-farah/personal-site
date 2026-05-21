@@ -44,10 +44,10 @@ export const sections = [
             },
           
             {
-              company: "RelatiPay",
+              company: "Study Squadron",
               date: "2026 - Now",
-              title: "Co-Founder",
-              description: ["Founded a financial startup app enabling users to send money to relatives instantly with one click."],
+              title: "  Founder",
+              description: ["Founded a startup enabling users to study with friends and classmates."],
               dotColor: "bg-green-500"
             },
           ].map((item) => (

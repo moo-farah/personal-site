@@ -1,6 +1,6 @@
 export const photos = [
   {
-    image: "https://raw.githubusercontent.com/moo-farah/personal-site/main/src/assets/images/Luxurious.png",
+    image: "https://raw.githubusercontent.com/moo-farah/personal-site/main/src/assets/images/1.jpeg",
     date: "June 2024",
     location: "Lake Tahoe, CA",
     caption: "i got frostbite from the water",
