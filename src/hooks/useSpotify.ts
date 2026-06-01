@@ -77,11 +77,14 @@ export function useSpotify() {
 
     const fetchRecentTracks = async () => {
       try {
+        console.log('🎵 Fetching recent tracks with token:', token ? '✅ Present' : '❌ Missing');
         const response = await axios.get('https://api.spotify.com/v1/me/player/recently-played?limit=5', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
         });
+
+        console.log('Recent tracks response:', response.data);
 
         if (response.data && response.data.items) {
           const tracks = response.data.items.map((item: any) => ({
@@ -92,11 +95,14 @@ export function useSpotify() {
             albumImageUrl: item.track.album.images?.[0]?.url ?? '',
             spotifyUrl: item.track.external_urls.spotify,
           }));
+          console.log('✅ Loaded', tracks.length, 'recent tracks');
           setRecentTracks(tracks);
           setSpotifyError(null);
+        } else {
+          console.warn('⚠️ No items in response:', response.data);
         }
-      } catch (error) {
-        console.error('Error fetching recent tracks:', error);
+      } catch (error: any) {
+        console.error('❌ Error fetching recent tracks:', error.response?.status, error.response?.data || error.message);
         setSpotifyError('Unable to load recently played songs. Check Spotify token scopes.');
       }
     };

@@ -24,12 +24,16 @@ export const useSpotifyAuth = () => {
 
         if (cancelled) return;
 
+        console.log('Spotify token response:', data);
+
         if (data?.error || !data?.access_token) {
           const errorMessage = data?.error_description || data?.error || 'Unable to fetch Spotify access token.';
+          console.error('Spotify Auth Error:', errorMessage);
           setAuthError(errorMessage);
           return;
         }
 
+        console.log('✅ Spotify token refreshed successfully');
         setToken(data.access_token);
         setAuthError(null);
 

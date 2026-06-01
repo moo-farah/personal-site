@@ -7,7 +7,7 @@ export const photos = [
     style: "sm:top-4 sm:left-[-10%] top-2 left-2 rotate-[-6deg] z-10"
   },
   {
-    image: "https://raw.githubusercontent.com/moo-farah/personal-site//main/src/assets/images/2.jpeg",
+    image: "https://raw.githubusercontent.com/moo-farah/personal-site/main/src/assets/images/2.jpeg",
     date: "December 2024",
     location: "San Diego, CA",
     caption: "balboa park was too big",
