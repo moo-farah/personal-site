@@ -9,8 +9,8 @@ export const photos = [
   {
     image: "https://raw.githubusercontent.com/moo-farah/personal-site/main/src/assets/images/2.jpeg",
     date: "December 2024",
-    location: "San Diego, CA",
-    caption: "balboa park was too big",
+    location: "Dubai Aquarium",
+    caption: "dubai aquarium was too big",
     style: "sm:top-12 sm:left-[15%] top-8 right-2 rotate-[4deg] z-20"
   },
   {
