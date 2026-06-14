@@ -1,13 +1,13 @@
 export const photos = [
   {
-    image: "https://raw.githubusercontent.com/moo-farah/personal-site//main/src/assets/images/1.jpeg",
+    image: "https://raw.githubusercontent.com/moo-farah/personal-site//main/src/assets/images/1.png",
     date: "March 2025",
     location: "Dubai Mall, UAE",
-    caption: "my first time in a mall",
+    caption: "my first time in a dubaimall",
     style: "sm:top-4 sm:left-[-10%] top-2 left-2 rotate-[-6deg] z-10"
   },
   {
-    image: "https://raw.githubusercontent.com/moo-farah/personal-site/main/src/assets/images/2.jpeg",
+    image: "https://raw.githubusercontent.com/moo-farah/personal-site/main/src/assets/images/2.png",
     date: "December 2024",
     location: "Dubai Aquarium",
     caption: "dubai aquarium was too big",

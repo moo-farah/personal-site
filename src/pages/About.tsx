@@ -27,7 +27,7 @@ const About = () => {
           About
         </motion.h1>
         <motion.p className="text-sm sm:text-base leading-relaxed mb-6">
-          A little secret about me.
+          Who I am.
         </motion.p>
       </FadeInSection>
 
