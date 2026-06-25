@@ -14,16 +14,16 @@ export const photos = [
     style: "sm:top-12 sm:left-[15%] top-8 right-2 rotate-[4deg] z-20"
   },
   {
-    image: "https://raw.githubusercontent.com/moo-farah/personal-site//main/src/assets/images/3.jpeg",
+    image: "https://raw.githubusercontent.com/moo-farah/personal-site//main/src/assets/images/3.png",
     date: "July 2024",
     location: "COEX Aquarium, South Korea",
     caption: "pregnant korean shark",
     style: "sm:left-[45%] top-8 right-8 rotate-[-3deg] z-30"
   },
   {
-    image: "https://raw.githubusercontent.com/moo-farah/personal-site//main/src/assets/images/4.jpeg",
+    image: "https://raw.githubusercontent.com/moo-farah/personal-site//main/src/assets/images/4.png",
     date: "December 2023",
-    location: "Joshua Park, CA",
+    location: "The Mohammed Bin Rashid Library (MBRL), Dubai",
     caption: "lots of rocks",
     style: "top-[10%] left-[70%] rotate-[5deg] z-40"
   }
