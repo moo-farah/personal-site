@@ -14,7 +14,7 @@ export const photos = [
     style: "sm:top-12 sm:left-[15%] top-8 right-2 rotate-[4deg] z-20"
   },
   {
-    image: "https://raw.githubusercontent.com/moo-farah/personal-site/main/src/assets/images/5.jpeg",
+    image: "https://raw.githubusercontent.com/moo-farah/personal-site/main/src/assets/images/3.jpeg",
     date: "July 2024",
     location: "Abu Dhabi",
     caption: "Sheikh zayed grand mosque",
