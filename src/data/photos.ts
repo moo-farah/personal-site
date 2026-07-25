@@ -7,14 +7,14 @@ export const photos = [
     style: "sm:top-4 sm:left-[-10%] top-2 left-2 rotate-[-6deg] z-10"
   },
   {
-    image: "https://raw.githubusercontent.com/moo-farah/personal-site/main/src/assets/images/2.png",
+    image: "https://raw.githubusercontent.com/moo-farah/personal-site/main/src/assets/images/2.jpeg",
     date: "December 2024",
-    location: "Dubai Aquarium",
-    caption: "dubai aquarium was too big",
+    location: "Future Museum",
+    caption: "dubai future museum was future",
     style: "sm:top-12 sm:left-[15%] top-8 right-2 rotate-[4deg] z-20"
   },
   {
-    image: "https://raw.githubusercontent.com/moo-farah/personal-site//main/src/assets/images/4.jpeg",
+    image: "https://raw.githubusercontent.com/moo-farah/personal-site//main/src/assets/images/5.jpeg",
     date: "July 2024",
     location: "COEX Aquarium, South Korea",
     caption: "pregnant korean shark",
