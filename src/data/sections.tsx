@@ -12,19 +12,19 @@ const projects = [
       { name: "Google API", color: "neutral" },
       { name: "NASA API", color: "amber" }
     ],
-    link: "https://github.com/moo-farah/wildfire-tracker-website",
+    link: "https://github.com/moo-farah/album-finder",
     previewImage: "https://personal-site-phi-snowy.vercel.app/assets/cypherchat-7f589c33.png"
   },
   {
-    title: "Spotify Data Dashboard",
-    description: "Dashboard that fetches Spotify's Top 50 songs and visualizes data in text and chart form.",
+    title: "Album Finder",
+    description: "App that searches for an artist by name on Spotify and displays their albums as visual cards.",
     tech: [
       { name: "React", color: "cyan" },
       { name: "Spotify API", color: "emerald" },
       { name: "JavaScript", color: "yellow" },
       { name: "Node.js", color: "green" },
     ],
-    link: "https://github.com/moo-farah/wildfire-tracker-website",
+    link: "https://github.com/moo-farah/album-finder",
     previewImage: "https://personal-site-phi-snowy.vercel.app/assets/spotifydash-7d7e663f.png"
   }
 ];
@@ -37,10 +37,18 @@ export const sections = [
           {[
             {
               company: "Middlesex University",
-              date: "2024 - Now",
+              date: "2024 - 2025",
               title: "BSc Information Technology",
-              description: ["Graduating in July 2026 with a passion for tech and innovation"],
+              description: ["got my degree to make my parents proud"],
               dotColor: "bg-amber-500"
+            },
+
+            {
+              company: "Edulink Int College",
+              date: "2022 - 2023",
+              title: "Adv Diploma Software Engineering",
+              description: ["computers make sense now"],
+              dotColor: "bg-purple-500"
             },
           
             {
