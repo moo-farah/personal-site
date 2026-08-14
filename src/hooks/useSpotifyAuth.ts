@@ -20,8 +20,6 @@ export const useSpotifyAuth = () => {
   }, []);
 
   const getAccessToken = async () => {
-    // For production, the token generation happens server-side in the API routes
-    // This is kept for development/local use
     const basic = btoa(`${CLIENT_ID}:${CLIENT_SECRET}`);
     const params = new URLSearchParams();
     params.append("grant_type", "refresh_token");
