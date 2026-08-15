@@ -17,7 +17,7 @@ const projects = [
   },
   {
     title: "Album Finder",
-    description: "App that searches for an artist by name on Spotify and displays their albums as visual cards.",
+    description: "A web app for discovering and exploring music albums, built with the Spotify Web API",
     tech: [
       { name: "React", color: "cyan" },
       { name: "Spotify API", color: "emerald" },
