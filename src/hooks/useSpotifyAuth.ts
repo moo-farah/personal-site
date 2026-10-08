@@ -9,32 +9,31 @@ export const useSpotifyAuth = () => {
   const [token, setToken] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!token) {
-      getAccessToken().then((data) => {
-        setToken(data.access_token);
-      })
-      .catch((error) => {
-        console.error('Error fetching Spotify access token:', error);
-      });
-    }
-  }, []);
+    const getAccessToken = async () => {
+      const basic = btoa(`${CLIENT_ID}:${CLIENT_SECRET}`);
+      const params = new URLSearchParams();
+      params.append('grant_type', 'refresh_token');
+      params.append('refresh_token', REFRESH_TOKEN);
 
-  const getAccessToken = async () => {
-    const basic = btoa(`${CLIENT_ID}:${CLIENT_SECRET}`);
-    const params = new URLSearchParams();
-    params.append("grant_type", "refresh_token");
-    params.append("refresh_token", REFRESH_TOKEN);
-
-    const response = await fetch(TOKEN_ENDPOINT, {
+      const response = await fetch(TOKEN_ENDPOINT, {
         method: 'POST',
         headers: {
-        Authorization: `Basic ${basic}`,
-        'Content-Type': 'application/x-www-form-urlencoded',
+          Authorization: `Basic ${basic}`,
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: params.toString()
+        body: params.toString(),
+      });
+
+      return response.json();
+    };
+
+    getAccessToken().then((data) => {
+      setToken(data.access_token);
     })
-    return response.json();
-}
+    .catch((error) => {
+      console.error('Error fetching Spotify access token:', error);
+    });
+  }, []);
   
   return { token };
 };

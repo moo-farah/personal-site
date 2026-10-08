@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useSpotifyAuth } from './useSpotifyAuth';
 
-interface Track {
+export interface Track {
   id: string;
   name: string;
   artist: string;
@@ -11,11 +11,21 @@ interface Track {
   spotifyUrl: string;
 }
 
-declare global {
-  interface Window {
-    Spotify: any;
-    onSpotifyWebPlaybackSDKReady: () => void;
-  }
+interface SpotifyApiTrack {
+  id: string;
+  name: string;
+  artists: { name: string }[];
+  album: {
+    name: string;
+    images: { url: string }[];
+  };
+  external_urls: {
+    spotify: string;
+  };
+}
+
+interface RecentlyPlayedItem {
+  track: SpotifyApiTrack;
 }
 
 export function useSpotify() {
@@ -81,7 +91,7 @@ export function useSpotify() {
         });
 
         if (response.data && response.data.items) {
-          const tracks = response.data.items.map((item: any) => ({
+          const tracks = response.data.items.map((item: RecentlyPlayedItem) => ({
             id: item.track.id,
             name: item.track.name,
             artist: item.track.artists.map((artist: { name: string }) => artist.name).join(', '),
@@ -118,7 +128,7 @@ export function useSpotify() {
         );
 
         if (response.data && response.data.items) {
-          const tracks = response.data.items.map((item: any) => ({
+          const tracks = response.data.items.map((item: SpotifyApiTrack) => ({
             id: item.id,
             name: item.name,
             artist: item.artists.map((artist: { name: string }) => artist.name).join(', '),
