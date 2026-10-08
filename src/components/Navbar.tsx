@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import { useState, useEffect } from 'react';
 import { theme } from '../styles/theme';
+import logo from '../assets/icon/dots-icon.svg';
 
 const Navbar = () => {
   const { isDarkMode, toggleTheme } = useTheme();
@@ -30,9 +31,9 @@ const Navbar = () => {
           {/* Added Logo/Icon */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="" 
-              alt="logo-image" 
-              className="w-8 h-8"
+              src={logo}
+              alt="Mohamed Farah Logo" 
+              className="w-8 h-8 dark:invert"
             />
           </Link>
 
@@ -50,7 +51,7 @@ const Navbar = () => {
                 {item.label}
                 {activeTab === item.path && (
                   <motion.div
-                    className="absolute inset-0 rounded-lg -z-10"
+                    className="absolute inset-0 rounded-full -z-10"
                     style={{ backgroundColor: currentTheme.nav.bubble }}
                     layoutId="bubble"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}

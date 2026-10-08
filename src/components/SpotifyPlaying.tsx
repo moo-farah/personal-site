@@ -74,7 +74,7 @@ const SpotifyPlaying = () => {
           <div className="flex space-x-2">
             <button
               onClick={() => handleTabClick('recent')}
-              className={`px-3 py-1.5 text-sm rounded-lg transition-colors ${
+              className={`px-3 py-1.5 text-sm rounded-full transition-colors ${
                 activeList === 'recent'
                   ? 'text-gray-900 dark:text-white font-medium'
                   : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
@@ -88,7 +88,7 @@ const SpotifyPlaying = () => {
             </button>
             <button
               onClick={() => handleTabClick('top')}
-              className={`px-3 py-1.5 text-sm rounded-lg transition-colors ${
+              className={`px-3 py-1.5 text-sm rounded-full transition-colors ${
                 activeList === 'top'
                   ? 'text-gray-900 dark:text-white font-medium'
                   : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
