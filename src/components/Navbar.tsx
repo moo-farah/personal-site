@@ -6,10 +6,26 @@ import { theme } from '../styles/theme';
 import logo from '../assets/icon/dots-icon.svg';
 
 const Navbar = () => {
+  const [now, setNow] = useState(new Date());
   const { isDarkMode, toggleTheme } = useTheme();
   const location = useLocation();
   const [activeTab, setActiveTab] = useState(location.pathname);
   const currentTheme = isDarkMode ? theme.dark : theme.light;
+
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setNow(new Date());
+    }, 1000);
+    return () => window.clearInterval(interval);
+  }, []);
+
+  const currentTime = new Intl.DateTimeFormat('en-US', {
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+    timeZone: 'Africa/Nairobi',
+  }).format(now);
 
   useEffect(() => {
     setActiveTab(location.pathname);
@@ -86,8 +102,16 @@ const Navbar = () => {
                 </svg>
               )}
             </motion.button>
+            <time
+               dateTime={now.toISOString()}
+               className="text-sm text-gray-600 dark:text-gray-400"
+             >
+               {currentTime}
+            </time>
         </div>
+      
       </nav>
+    
     </header>
   );
 };
