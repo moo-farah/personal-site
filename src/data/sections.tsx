@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Project } from '../components/Project';
 import { HobbiesSection } from '../components/HobbiesSection';
+import { SkillsSection } from '../components/SkillsSection';
 
 const projects = [
   {
@@ -36,6 +37,28 @@ export const sections = [
         <div className="space-y-4 mb-8">
           {[
             {
+              company: "Y Combinator Startup School",
+              date: "2026 - Now",
+              title: "Participant",
+              description: 
+              [
+                "Founder track while building my startup",
+              ],
+              dotColor: "bg-orange-500"
+            },
+
+            {
+              company: "HackerRank Orchestrate",
+              date: 'Oct 2026',
+              title: "Participant",
+              description: [
+                "24-hour hackathon: design, build, and ship an AI agent,",
+                "Tools allowed: Cursor, Codex, Claude, Gemini, and more"
+              ],
+              dotColor: "bg-cyan-500"
+            },
+
+            {
               company: "Middlesex University",
               date: "2024 - 2025",
               title: "BSc Information Technology",
@@ -50,14 +73,7 @@ export const sections = [
               description: ["computers make sense now"],
               dotColor: "bg-purple-500"
             },
-          
-            {
-              company: "Study Squadron",
-              date: "2026 - Now",
-              title: "  Founder",
-              description: ["Founded a startup enabling users to study with friends and classmates."],
-              dotColor: "bg-green-500"
-            },
+
           ].map((item) => (
             <div key={item.company + item.date} className="relative">
               <div 
@@ -83,6 +99,10 @@ export const sections = [
           ))}
         </div>
       )
+    },
+    {
+      title: 'Skills',
+      content: <SkillsSection />,
     },
     {
       title: "Projects",
