@@ -12,13 +12,6 @@ export interface SpotifyTrack {
   albumImageUrl: string;
 }
 
-export interface GearItem {
-  name: string;
-  category: string;
-  link: string;
-  image: string;
-}
-
 export interface GalleryImage {
   id: number;
   src: string;
