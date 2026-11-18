@@ -38,7 +38,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.2 }}
           >
-            Software engineer
+            Software engineer dedicated to building meaningful digital experiences that make a lasting impact on people’s lives through the power of code and problem-solving.
           </motion.p>
           <motion.div
             className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-600 dark:text-gray-400"
