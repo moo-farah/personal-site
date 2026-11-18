@@ -7,9 +7,9 @@ export const theme = {
     
     // Background colors
     bg: {
-      primary: '#FFFFFF',    // Main site background
-      secondary: '#F9FAFB',  // Used for cards and photo card backs
-      tertiary: '#F3F4F6',   // Used for hover states and borders
+      primary: '#F3F1EC',    // Warm studio paper (Dots-style)
+      secondary: '#E7E4DE',  // Used for cards and photo card backs
+      tertiary: '#DDD9D2',   // Used for hover states and borders
     },
     
     // Text colors
@@ -28,10 +28,12 @@ export const theme = {
 
     // Navigation
     nav: {
-      bg: 'rgba(255, 255, 255, 0.8)',  // Navbar background with transparency
-      bubble: '#e1e1e3',                // Used for Spotify tab buttons and nav indicators
-      text: '#4B5563',                  // Navbar text color
-      textHover: '#111827',             // Navbar text hover color
+      bg: 'rgba(255, 255, 255, 0.72)',  // In-flow header
+      pill: '#2E2E2E',                  // Dots-style scroll-pop capsule
+      pillBubble: '#3C3C3C',
+      bubble: '#E4E1DB',
+      text: '#4B5563',
+      textHover: '#111827',
     }
   },
   
@@ -43,8 +45,8 @@ export const theme = {
     
     // Background colors
     bg: {
-      primary: '#000000',    // Main site background
-      secondary: '#222222',  // Used for cards and photo card backs
+      primary: '#121211',    // Off-black studio (not pure black)
+      secondary: '#1C1C1A',  // Used for cards and photo card backs
       tertiary: '#818CF8',   // Used for hover states and borders
     },
     
@@ -64,10 +66,12 @@ export const theme = {
 
     // Navigation
     nav: {
-      bg: 'rgba(0, 0, 0, 0.8)',  // Navbar background with transparency
-      bubble: '#222222',          // Used for Spotify tab buttons and nav indicators
-      text: '#9CA3AF',            // Navbar text color
-      textHover: '#F9FAFB',       // Navbar text hover color
+      bg: 'rgba(18, 18, 17, 0.72)',
+      pill: '#2E2E2E',
+      pillBubble: '#3C3C3C',
+      bubble: '#2A2A28',
+      text: '#9CA3AF',
+      textHover: '#F9FAFB',
     }
   }
 }; 

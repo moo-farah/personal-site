@@ -29,7 +29,7 @@ export const FunCard = ({
         {action}
       </div>
       <div
-        className={`h-56 border-t border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-[#111] sm:h-64 ${
+        className={`h-56 border-t border-gray-200 bg-[#EDEAE4] dark:border-gray-700 dark:bg-[#1A1A18] sm:h-64 ${
           clip ? 'overflow-hidden' : 'overflow-visible'
         }`}
       >

@@ -38,7 +38,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.2 }}
           >
-            Frontend engineer in Kenya — I build with React and TypeScript. In Y Combinator Startup School, working on Study Squadron. Open to full-time frontend roles.
+            Software engineer
           </motion.p>
           <motion.div
             className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-600 dark:text-gray-400"
