@@ -5,15 +5,37 @@ const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (hash) {
-      const id = hash.replace('#', '');
-      const frame = window.requestAnimationFrame(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-      });
-      return () => window.cancelAnimationFrame(frame);
+    if (!hash) {
+      window.scrollTo(0, 0);
+      return;
     }
 
-    window.scrollTo(0, 0);
+    const id = hash.replace('#', '');
+    let cancelled = false;
+    let attempts = 0;
+
+    const tryScroll = () => {
+      if (cancelled) return;
+
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+
+      attempts += 1;
+      if (attempts < 50) {
+        window.setTimeout(tryScroll, 50);
+      }
+    };
+
+    // Wait for the page-exit animation (AnimatePresence mode="wait") so About is mounted.
+    const start = window.setTimeout(tryScroll, 450);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(start);
+    };
   }, [pathname, hash]);
 
   return null;
