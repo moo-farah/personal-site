@@ -9,8 +9,11 @@ type FunNavProps = {
 };
 
 export const FunNav = ({ active, onSelect }: FunNavProps) => {
-  const { currentTheme, isDarkMode } = useTheme();
+  const { isDarkMode } = useTheme();
   const [hovered, setHovered] = useState<FunFilter | null>(null);
+
+  const activeFill = isDarkMode ? '#2A2A28' : '#e1e1e3';
+  const hoverFill = isDarkMode ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)';
 
   return (
     <nav
@@ -29,35 +32,31 @@ export const FunNav = ({ active, onSelect }: FunNavProps) => {
             onClick={() => onSelect(category.id)}
             onMouseEnter={() => setHovered(category.id)}
             aria-current={isActive ? 'page' : undefined}
-            className={`relative shrink-0 px-2.5 py-1 text-sm transition-colors ${
+            className={`relative isolate shrink-0 px-2.5 py-1 text-sm transition-colors ${
               isActive
                 ? 'text-gray-900 dark:text-white'
                 : 'text-gray-400 hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-200'
             }`}
           >
             {isActive && (
-              <motion.div
-                className="absolute inset-0 -z-10 rounded"
-                style={{ backgroundColor: currentTheme.nav.bubble }}
+              <motion.span
+                className="absolute inset-0 z-0 rounded"
+                style={{ backgroundColor: activeFill }}
                 layoutId="fun-category"
                 transition={{ type: 'spring', bounce: 0.15, duration: 0.45 }}
               />
             )}
             {isHovered && !isActive && (
-              <motion.div
-                className="absolute inset-0 -z-10 rounded"
+              <motion.span
+                className="absolute inset-0 z-0 rounded"
                 layoutId="fun-hover"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ type: 'spring', bounce: 0.15, duration: 0.35 }}
-                style={{
-                  backgroundColor: isDarkMode
-                    ? 'rgba(255, 255, 255, 0.08)'
-                    : 'rgba(0, 0, 0, 0.05)',
-                }}
+                style={{ backgroundColor: hoverFill }}
               />
             )}
-            {category.label}
+            <span className="relative z-10">{category.label}</span>
           </button>
         );
       })}

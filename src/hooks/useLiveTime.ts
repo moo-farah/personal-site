@@ -17,5 +17,5 @@ export function useLiveTime() {
     return () => window.clearInterval(intervalId);
   }, []);
 
-  return { now, label: NAIROBI_TIME.format(now) };
+  return { now, label: `${NAIROBI_TIME.format(now)} EAT` };
 }

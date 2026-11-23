@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import SpotifyPlaying from '../components/SpotifyPlaying';
@@ -57,6 +58,18 @@ const Home = () => {
               <Clock size={16} strokeWidth={1.5} className="h-4 w-4 shrink-0" aria-hidden />
               {timeLabel}
             </time>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.5 }}
+          >
+            <Link
+              to="/about#projects"
+              className="inline-flex items-center text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+            >
+              View projects →
+            </Link>
           </motion.div>
         </section>
       </FadeInSection>

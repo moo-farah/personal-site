@@ -42,7 +42,7 @@ const Fun = () => {
               >
                 {items.length === 0 ? (
                   <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Nothing here yet.
+                    Coming soon...
                   </p>
                 ) : (
                   items.map((item) => (

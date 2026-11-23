@@ -27,7 +27,10 @@ export const AboutSection = () => {
       {sections.map((section, index) => (
         <FadeInSection key={section.title}>
           <motion.section
-            className="space-y-1 rounded-xl overflow-hidden cursor-default"
+            id={section.title === 'Projects' ? 'projects' : undefined}
+            className={`space-y-1 rounded-xl overflow-hidden cursor-default ${
+              section.title === 'Projects' ? 'scroll-mt-24' : ''
+            }`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ 
               opacity: hoveredIndex === null || hoveredIndex === index ? 1 : 0.5,
